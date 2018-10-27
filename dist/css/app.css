@@ -194,6 +194,17 @@ button:focus {
     width: 18px; }
   .header__trigger:hover span:after {
     width: 22px; }
+  .header--mobile .header__trigger span {
+    background: #ef004a;
+    box-shadow: none; }
+  .header--mobile .header__trigger span:before {
+    bottom: 0;
+    width: 30px;
+    transform: rotate(45deg); }
+  .header--mobile .header__trigger span:after {
+    top: 0;
+    width: 30px;
+    transform: rotate(-45deg); }
   @media only screen and (min-width: 768px) {
     .header__trigger {
       position: absolute;

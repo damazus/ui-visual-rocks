@@ -116,6 +116,25 @@
     }
   }
 
+  .header--mobile & {
+    span{
+      background: $color_red;
+      box-shadow: none;
+    }
+
+    span:before{
+      bottom: 0;
+      width: 30px;
+      transform: rotate(45deg);
+    }
+
+    span:after{
+      top: 0;
+      width: 30px;
+      transform: rotate(-45deg);
+    }
+  }
+
   @include MQ(M){
     position: absolute;
     @include center(y);

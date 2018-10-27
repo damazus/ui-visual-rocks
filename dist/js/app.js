@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let $active_link = null
 
     menu_trigger.addEventListener("click", function () {
-        header.classList.add("header--mobile")
+        header.classList.toggle("header--mobile")
         body.classList.add('no-scroll')
     });
 
