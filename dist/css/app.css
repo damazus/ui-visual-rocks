@@ -6,7 +6,7 @@
 
 @keyframes section-in {
   from {
-    transform: translateY(50px); }
+    transform: translateY(80px); }
   to {
     opacity: 1;
     visibility: visible;
@@ -265,7 +265,7 @@ button:focus {
   color: #4f4f4f; }
 
 .section--animation {
-  animation: section-in 1.5s forwards; }
+  animation: section-in 1s forwards; }
 
 .section--hidden {
   opacity: 0;
