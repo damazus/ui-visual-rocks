@@ -492,7 +492,13 @@ button:focus {
     display: block; }
 
 .map {
-  height: 440px; }
+  height: 290px; }
+  @media only screen and (min-width: 1024px) {
+    .map {
+      height: 340px; } }
+  @media only screen and (min-width: 1200px) {
+    .map {
+      height: 390px; } }
 
 .hire-box {
   padding: 70px 0;

@@ -339,7 +339,15 @@
 
 // map
 .map{
-  height: 440px;
+  height: 290px;
+
+  @include MQ(L){
+    height: 340px;
+  }
+
+  @include MQ(XL){
+    height: 390px;
+  }
 }
 
 // hire

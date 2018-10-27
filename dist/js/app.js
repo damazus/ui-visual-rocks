@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // map
     const map = L.map('map', {
-        scrollWheelZoom: false
+        scrollWheelZoom: false,
+        touchZoom: false
     });
     const myIcon = L.icon({
         iconUrl: 'dist/img/pin.svg',
@@ -51,4 +52,3 @@ document.addEventListener("DOMContentLoaded", function () {
     const markerBounds = L.latLngBounds(latLngs);
     map.fitBounds(markerBounds);
 });
-
