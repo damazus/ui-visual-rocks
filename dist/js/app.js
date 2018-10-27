@@ -1,11 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
     // header
     const body = document.querySelector('body')
+    const brand = document.querySelector('#header__brand')
     const header = document.querySelector('#header')
     const header_height = header.getBoundingClientRect().height
     const menu_trigger = document.querySelector("#header__trigger")
     const links = document.querySelectorAll(".header-menu-link")
     let $active_link = null
+
+    brand.addEventListener('click', function () {
+        header.classList.remove("header--mobile")
+        body.classList.remove('no-scroll')
+        document.querySelector('.header-menu-link.is-active').classList.remove('is-active')
+    })
 
     menu_trigger.addEventListener("click", function () {
         header.classList.toggle("header--mobile")

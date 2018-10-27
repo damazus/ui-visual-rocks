@@ -28,6 +28,14 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   color: $color_black;
+  transition: transform .25s;
+
+  .header--mobile & {
+    position: relative;
+    z-index: 1003;
+    color: #FFF;
+    transform: scale(1.2) translateX(15px);
+  }
 }
 
 .header-menu{
@@ -122,15 +130,18 @@
       box-shadow: none;
     }
 
+    span:before,
+    span:after{
+      width: 28px;
+    }
+
     span:before{
       bottom: 0;
-      width: 30px;
       transform: rotate(45deg);
     }
 
     span:after{
       top: 0;
-      width: 30px;
       transform: rotate(-45deg);
     }
   }
