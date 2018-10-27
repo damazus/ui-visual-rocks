@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 
 ```
-$ git clone git@github.com:damazus/ui-watch-preview.git
+$ git clone git@github.com:damazus/ui-visual-rocks.git
 ```
 
 ```
