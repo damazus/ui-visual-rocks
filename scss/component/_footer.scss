@@ -1,0 +1,52 @@
+// footer
+.footer .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 15px;
+
+  @include MQ(L){
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 15px;
+  }
+}
+
+.footer_brand{
+  font-family: "GTWalsheim Bold";
+  font-size: 20px;
+  text-transform: uppercase;
+  color: $color_black;
+  margin-bottom: 15px;
+
+  @include MQ(L){
+    margin-bottom: 0;
+  }
+}
+
+.footer-menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include MQ(M){
+    flex-direction: row;
+  }
+}
+
+.footer-menu-item{
+  margin: 6px 8px;
+
+  a{
+    color: $color_red;
+
+    &:hover{
+      color: darken($color_red, 5%);
+    }
+  }
+
+  @include MQ(M){
+    margin: 0 8px;
+  }
+}

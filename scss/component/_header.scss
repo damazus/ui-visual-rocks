@@ -1,0 +1,150 @@
+// header
+.header{
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  width: 100%;
+  height: $header_height;
+  background: $color_yellow;
+
+  &.header--sticky{
+    position: fixed;
+    top: 0;
+    animation: header-in .3s;
+    box-shadow: 0 3px 10px rgba($color_yellow, 0.5);
+  }
+
+  @include MQ(L){
+    padding: 0 40px;
+  }
+}
+
+.header__brand{
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $color_black;
+}
+
+.header-menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1002;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: $color_red;
+  transform: translateX(300px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform .3s, opacity .25s, visibility .25s;
+
+  @include MQ(M){
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background: none;
+    transform: translateX(0);
+    transition: tranform .0s;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.header.header--mobile{
+  .header-menu{
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.header__trigger{
+  position: relative;
+  z-index: 1002;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transform: translateX(0);
+  transition: transform .25s;
+
+  span,
+  span:before,
+  span:after{
+    content: "";
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 3px;
+    border-radius: 1px;
+    background: #FFF;
+    box-shadow: 1px 2px 2px rgba(#000, .1);
+    transition: width .25s, transform .4s;
+  }
+
+  span:before{
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    width: 22px;
+  }
+
+  span:after{
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 18px;
+  }
+
+  &:hover{
+    span:before{
+      width: 18px;
+    }
+
+    span:after{
+      width: 22px;
+    }
+  }
+
+  @include MQ(M){
+    position: absolute;
+    @include center(y);
+    right: 0;
+
+    opacity: 0;
+    visibility: visible;
+    //transform: translateX(70px);
+  }
+}
+
+.header-menu-link{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  color: #FFF;
+  padding: 0 10px;
+
+  &.is-active{
+    color: $color_yellow;
+  }
+
+  @include MQ(M){
+    display: inline-block;
+    height: auto;
+    color: $color_red;
+
+    &.is-active{
+      color: #FFF;
+    }
+  }
+}

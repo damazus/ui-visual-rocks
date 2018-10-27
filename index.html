@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Virual rock one-page</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+    <link rel="stylesheet" href="dist/plugins/ion/css/ionicons.min.css">
+    <link rel="stylesheet" href="dist/css/app.css">
+</head>
+<body id="scroller">
+<header class="header" id="header" data-sticky-class="header--sticky" data-sticky-offset="150">
+    <a href="#" class="header__brand">visual rocks</a>
+    <nav class="header-nav">
+        <ul class="header-menu" id="header-menu">
+            <li class="header-menu-item"><a href="#services-workflow" class="header-menu-link">Services & Workflow</a></li>
+            <li class="header-menu-item"><a href="#about" class="header-menu-link">About</a></li>
+            <li class="header-menu-item"><a href="#team" class="header-menu-link">Team</a></li>
+            <li class="header-menu-item"><a href="#contact-us" class="header-menu-link">Contact Us</a></li>
+        </ul>
+        <a href="#0" class="header__trigger" id="header__trigger">
+            <span></span>
+        </a>
+    </nav>
+</header>
+<div class="hero-wrapper">
+    <div class="hero">
+        <div class="container">
+            <div class="hero__intro">We Design Interfaces for Digital Products</div>
+            <!--<img src="" class="hero__picture" alt="..."/>-->
+            <div class="hero-infos">
+                <div class="hero-info">
+                    We believe that digital worlds helps people to extend limits, improves everyday life and connects to the things we love.
+                    And this world talks to us through user interface
+                </div>
+                <div class="hero-info">
+                    We design app interfaces for devices of any kind, starting from wearables to smart TVs including smartphones and desktops.
+                    We love our work and we do it with passion.
+                </div>
+            </div>
+            <div class="hero-actions">
+                <div class="hero-actions-hire">
+                    <button class="hero__btn">Hire Us</button>
+                    <span class="hero__available">We are Available</span>
+                </div>
+                <ul class="hero-socials">
+                    <li class="hero-social-item"><a href="#0"><i class="ion ion-social-dribbble-outline"></i></a></li>
+                    <li class="hero-social-item"><a href="#0"><i class="ion ion-social-instagram-outline"></i></a></li>
+                    <li class="hero-social-item"><a href="#0"><i class="ion ion-social-facebook-outline"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section section-work" id="services-workflow" data-section>
+    <div class="container">
+        <h3 class="section-title">Services & Workflow</h3>
+        <div class="section-description">We adapt our workflow for every product to perfectly match its needs, but in general it consist of 6stages</div>
+        <div class="works">
+            <div class="work">
+                <div>
+                    <div class="work__number">1</div>
+                </div>
+                <div class="work__inner">
+                    <h3 class="work__title">Research</h3>
+                    <div class="work_description">We dive into product's domain.Get knowledge about target audience and their needs, find what value we can bring them.
+                        Research business goals, market and competitors.</div>
+                </div>
+            </div>
+            <div class="work">
+                <div>
+                    <div class="work__number">2</div>
+                </div>
+                <div class="work__inner">
+                    <h3 class="work__title">UX Design</h3>
+                    <div class="work_description">
+                        We start with building a list of features that will create a good value for target audience and will meet the business
+                        goals.We create interactive prototype and make user tests to refine the idea and build the best user experience
+                    </div>
+                </div>
+            </div>
+            <div class="work">
+                <div>
+                    <div class="work__number">3</div>
+                </div>
+                <div class="work__inner">
+                    <h3 class="work__title">Visual Design</h3>
+                    <div class="work_description">
+                        We work on the final look of the product, define style for all interface elements to create solid and consistent visual experience.
+                        We create supplement graphics for marketplaces and promo needs.
+                    </div>
+                </div>
+            </div>
+            <div class="work">
+                <div>
+                    <div class="work__number">4</div>
+                </div>
+                <div class="work__inner">
+                    <h3 class="work__title">Motion Design</h3>
+                    <div class="work_description">
+                        We design interface animations and screen transitions, since they can drastically improve user experience.
+                        And of course custom transitions delight users and help to stand out among competitors.
+                    </div>
+                </div>
+            </div>
+            <div class="work">
+                <div>
+                    <div class="work__number">5</div>
+                </div>
+                <div class="work__inner">
+                    <h3 class="work__title">Guidelines and Assets</h3>
+                    <div class="work_description">
+                        Good collaboration with development team is extremely important so we prepare graphic assets, visual guidelines and redlines for developers.
+                        For complex interfaces we create comprehensive documentation.
+                    </div>
+                </div>
+            </div>
+            <div class="work">
+                <div>
+                    <div class="work__number">6</div>
+                </div>
+                <div class="work__inner">
+                    <h3 class="work__title">Implementation testing</h3>
+                    <div class="work_description">
+                        When the interface is implemented by development team we test the product for design implementation consistency and compliance to design
+                        guidelines.All visual defects are reported to developers.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-about" id="about" data-section>
+    <h3 class="section-about__title">Lean Approach</h3>
+    <div class="section-about__description">We have started with simple one-page pilot version that will be gradually improved over time</div>
+</div>
+<div class="section section-team" id="team" data-section>
+    <div class="container">
+        <h3 class="section-title">Target Audience Research</h3>
+        <div class="section-description">We have created profiles of our target audience groups, have listed their needs and concerns</div>
+        <div class="teams">
+            <div class= "team">
+                <div class="team__inner">
+                    <img src="dist/img/user.jpg" class="team__picture" alt="..."/>
+                    <div class="team__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid animi, aperiam cupiditate eaque</div>
+                </div>
+            </div>
+            <div class= "team">
+                <div class="team__inner">
+                    <img src="dist/img/user.jpg" class="team__picture" alt="..."/>
+                    <div class="team__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid animi, aperiam cupiditate eaque</div>
+                </div>
+            </div>
+            <div class= "team">
+                <div class="team__inner">
+                    <img src="dist/img/user.jpg" class="team__picture" alt="..."/>
+                    <div class="team__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid animi, aperiam cupiditate eaque</div>
+                </div>
+            </div>
+        </div>
+        <div class="section-description">We have defined our value that we bring to customers, to have a clear vision of how the
+            communication should be built</div>
+        <div class="team-features">
+            <div class="team-feature">
+                <div class="team-feature_number">7</div>
+                <div class="team-feature_info">
+                    <span>client</span>
+                    <span>goals</span>
+                </div>
+            </div>
+            <div class="team-feature">
+                <div class="team-feature_number">5</div>
+                <div class="team-feature_info">
+                    <span>advantages</span>
+                    <span>for clients</span>
+                </div>
+            </div>
+            <div class="team-feature">
+                <div class="team-feature_number">14</div>
+                <div class="team-feature_info">
+                    <span>client</span>
+                    <span>concerns</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-hire" id="contact-us" data-section>
+    <div id="map" class="map"></div>
+    <div class="hire-box">
+        <div class="container">
+            <div>
+                <button class="hero__btn">Hire Us</button>
+            </div>
+            <div class="hire-box__content">
+                <p>We are available for hire,</p>
+                <p>contact us for a free quote</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <a href="#0" class="footer_brand">visual rocks</a>
+        <ul class="footer-menu">
+            <li class="footer-menu-item"><a href="#0">Dribbble</a></li>
+            <li class="footer-menu-item"><a href="#0">Behance</a></li>
+            <li class="footer-menu-item"><a href="#0">Facebook</a></li>
+            <li class="footer-menu-item"><a href="#0">Contact US</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+        integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+<script src="dist/js/sticky.js"></script>
+<script src="dist/js/scroller.js"></script>
+<script src="dist/js/app.js"></script>
+</body>
+</html>

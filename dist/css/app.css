@@ -1,0 +1,554 @@
+@keyframes header-in {
+  from {
+    transform: translateY(-150px); }
+  to {
+    transform: translateY(0); } }
+
+@keyframes section-in {
+  from {
+    transform: translateY(50px); }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); } }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: 'GTWalsheim';
+  src: url(../fonts/GTWalsheim/GT-Walsheim-Pro-Medium.woff); }
+
+@font-face {
+  font-family: 'GTWalsheim Bold';
+  src: url(../fonts/GTWalsheim/GT-Walsheim-Pro-Bold.woff); }
+
+@font-face {
+  font-family: 'blokk';
+  src: url(../fonts/BLOKKNeue-Regular.ttf); }
+
+html {
+  scroll-behavior: smooth; }
+
+body {
+  font-family: 'GTWalsheim', sans-serif; }
+  body.no-scroll {
+    overflow: hidden; }
+
+a,
+a:active,
+a:visited,
+a:hover,
+a:focus {
+  cursor: pointer;
+  text-decoration: none; }
+
+button,
+button:active,
+button:visited,
+button:hover,
+button:focus {
+  outline: none;
+  cursor: pointer; }
+
+.header {
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  width: 100%;
+  height: 80px;
+  background: #f7cb1c; }
+  .header.header--sticky {
+    position: fixed;
+    top: 0;
+    animation: header-in .3s;
+    box-shadow: 0 3px 10px rgba(247, 203, 28, 0.5); }
+  @media only screen and (min-width: 1024px) {
+    .header {
+      padding: 0 40px; } }
+
+.header__brand {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #010100; }
+
+.header-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1002;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: #ef004a;
+  transform: translateX(300px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform .3s, opacity .25s, visibility .25s; }
+  @media only screen and (min-width: 768px) {
+    .header-menu {
+      flex-direction: row;
+      position: static;
+      width: auto;
+      background: none;
+      transform: translateX(0);
+      transition: tranform .0s;
+      opacity: 1;
+      visibility: visible; } }
+
+.header.header--mobile .header-menu {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible; }
+
+.header__trigger {
+  position: relative;
+  z-index: 1002;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transform: translateX(0);
+  transition: transform .25s; }
+  .header__trigger span,
+  .header__trigger span:before,
+  .header__trigger span:after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 3px;
+    border-radius: 1px;
+    background: #FFF;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+    transition: width .25s, transform .4s; }
+  .header__trigger span:before {
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    width: 22px; }
+  .header__trigger span:after {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 18px; }
+  .header__trigger:hover span:before {
+    width: 18px; }
+  .header__trigger:hover span:after {
+    width: 22px; }
+  @media only screen and (min-width: 768px) {
+    .header__trigger {
+      position: absolute;
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+      right: 0;
+      opacity: 0;
+      visibility: visible; } }
+
+.header-menu-link {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  color: #FFF;
+  padding: 0 10px; }
+  .header-menu-link.is-active {
+    color: #f7cb1c; }
+  @media only screen and (min-width: 768px) {
+    .header-menu-link {
+      display: inline-block;
+      height: auto;
+      color: #ef004a; }
+      .header-menu-link.is-active {
+        color: #FFF; } }
+
+.fixed {
+  position: fixed;
+  top: 0; }
+
+.section {
+  padding: 50px 0; }
+
+.section-title {
+  font-family: "GTWalsheim Bold";
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #010100; }
+  @media only screen and (min-width: 768px) {
+    .section-title {
+      font-size: 35px; } }
+
+.section-description {
+  max-width: 400px;
+  text-align: center;
+  line-height: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 45px;
+  color: #4f4f4f; }
+
+.section--animation {
+  animation: section-in 1.5s forwards; }
+
+.section--hidden {
+  opacity: 0;
+  visibility: hidden; }
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto; }
+
+.hero-wrapper {
+  overflow-x: hidden; }
+
+.hero {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  background: #f7cb1c;
+  margin-bottom: 40px; }
+  .hero:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    height: 40px;
+    background: #f7cb1c;
+    transform: rotate(-1deg); }
+
+.hero__intro {
+  font-family: "GTWalsheim Bold";
+  font-size: 28px;
+  max-width: 500px;
+  margin: 15px 0 30px; }
+  @media only screen and (min-width: 768px) {
+    .hero__intro {
+      font-size: 45px;
+      margin: 40px 0 30px; } }
+
+.hero__picture {
+  margin-bottom: 40px; }
+
+.hero-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; }
+  @media only screen and (min-width: 768px) {
+    .hero-infos {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 60px; } }
+
+.hero-info {
+  margin-bottom: 20px; }
+  @media only screen and (min-width: 768px) {
+    .hero-info {
+      width: 40%;
+      margin-bottom: 0; } }
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  @media only screen and (min-width: 768px) {
+    .hero-actions {
+      flex-direction: row;
+      justify-content: space-between; } }
+
+.hero-actions-hire {
+  text-align: center;
+  margin-bottom: 20px; }
+  @media only screen and (min-width: 768px) {
+    .hero-actions-hire {
+      margin-bottom: 0; } }
+
+.hero__btn {
+  display: block;
+  font-family: "GTWalsheim Bold";
+  font-size: 16px;
+  padding: 12px 60px;
+  margin-bottom: 4px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  background: #ef004a;
+  box-shadow: 1px 2px 10px rgba(86, 0, 27, 0.3); }
+  .hero__btn:hover {
+    background: #d60042;
+    box-shadow: 1px 4px 15px rgba(35, 0, 11, 0.3); }
+
+.hero__available {
+  font-size: 14px;
+  color: #ef004a; }
+
+.hero-socials {
+  display: flex; }
+  .hero-socials .hero-social-item {
+    margin: 0 8px; }
+  .hero-socials a {
+    color: #010100; }
+  .hero-socials .ion {
+    font-size: 45px; }
+
+.works {
+  display: flex;
+  flex-direction: column; }
+  @media only screen and (min-width: 768px) {
+    .works {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between; } }
+
+.work {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px; }
+  @media only screen and (min-width: 768px) {
+    .work {
+      width: 49%; } }
+
+.work__title {
+  font-family: "GTWalsheim Bold";
+  font-size: 24px;
+  margin-bottom: 10px; }
+
+.work__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  font-family: "GTWalsheim Bold";
+  border-radius: 50%;
+  background: #f7cb1c; }
+
+.work__inner {
+  padding: 8px 15px 0; }
+
+.work_description {
+  line-height: 18px;
+  color: #4f4f4f; }
+
+.section-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: #ef004a; }
+
+.section-about__title {
+  font-family: "GTWalsheim Bold";
+  font-size: 32px;
+  color: #FFF;
+  margin-bottom: 30px;
+  text-align: center; }
+  @media only screen and (min-width: 768px) {
+    .section-about__title {
+      font-size: 50px; } }
+
+.section-about__description {
+  text-align: center;
+  line-height: 22px;
+  max-width: 400px;
+  color: #FFF;
+  padding: 0 15px; }
+
+.teams {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30px; }
+  @media only screen and (min-width: 768px) {
+    .teams {
+      flex-direction: row;
+      margin-bottom: 50px; } }
+
+.team {
+  padding: 0 15px;
+  margin-bottom: 20px; }
+  @media only screen and (min-width: 768px) {
+    .team {
+      margin-bottom: 0; } }
+  @media only screen and (min-width: 1024px) {
+    .team {
+      width: 33.33%; } }
+
+.team__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 30px;
+  border-radius: 3px;
+  background: #ef004a;
+  box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.1); }
+
+.team__picture {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 30px; }
+
+.team__description {
+  font-family: blokk;
+  color: #FFF;
+  max-width: 100%; }
+
+.team-features {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 50px 0 0; }
+  @media only screen and (min-width: 768px) {
+    .team-features {
+      flex-direction: row; } }
+
+.team-feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; }
+  @media only screen and (min-width: 768px) {
+    .team-feature {
+      margin-bottom: 0; } }
+
+.team-feature_number {
+  font-family: "GTWalsheim Bold";
+  font-size: 45px;
+  margin-right: 8px;
+  color: #f7cb1c; }
+
+.team-feature_info {
+  color: #4f4f4f; }
+  .team-feature_info span {
+    display: block; }
+
+.map {
+  height: 440px; }
+
+.hire-box {
+  padding: 70px 0;
+  background: #f7cb1c; }
+  .hire-box .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+  @media only screen and (min-width: 768px) {
+    .hire-box .container {
+      flex-direction: row; } }
+
+.hire-box__content {
+  text-align: center;
+  margin-top: 15px; }
+  @media only screen and (min-width: 768px) {
+    .hire-box__content {
+      margin-top: 0; } }
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 15px; }
+  @media only screen and (min-width: 1024px) {
+    .footer .container {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 50px 15px; } }
+
+.footer_brand {
+  font-family: "GTWalsheim Bold";
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #010100;
+  margin-bottom: 15px; }
+  @media only screen and (min-width: 1024px) {
+    .footer_brand {
+      margin-bottom: 0; } }
+
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  @media only screen and (min-width: 768px) {
+    .footer-menu {
+      flex-direction: row; } }
+
+.footer-menu-item {
+  margin: 6px 8px; }
+  .footer-menu-item a {
+    color: #ef004a; }
+    .footer-menu-item a:hover {
+      color: #d60042; }
+  @media only screen and (min-width: 768px) {
+    .footer-menu-item {
+      margin: 0 8px; } }

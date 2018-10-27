@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'GTWalsheim';
+  src: url(../fonts/GTWalsheim/GT-Walsheim-Pro-Medium.woff);
+}
+
+@font-face {
+  font-family: 'GTWalsheim Bold';
+  src: url(../fonts/GTWalsheim/GT-Walsheim-Pro-Bold.woff);
+}
+
+@font-face {
+  font-family: 'blokk';
+  src: url(../fonts/BLOKKNeue-Regular.ttf);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'GTWalsheim', sans-serif;
+  //overflow-x: hidden;
+
+  &.no-scroll{
+    overflow: hidden;
+  }
+}
+
+a,
+a:active,
+a:visited,
+a:hover,
+a:focus{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button,
+button:active,
+button:visited,
+button:hover,
+button:focus{
+  outline: none;
+  cursor: pointer;
+}
